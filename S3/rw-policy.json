@@ -4,12 +4,28 @@
     {
       "Effect": "Allow",
       "Principal": {
-        "AWS": ["arn:aws:iam::111122223333:user/Alice",
-                "arn:aws:iam::111122223333:root"]
+        "AWS": ["arn:aws:iam::079454390799:user/altia1",
+                "arn:aws:iam::079454390799:root"]
       },
       "Action": "s3:*",
-      "Resource": ["arn:aws:s3:::my_bucket",
-                   "arn:aws:s3:::my_bucket/*"]
-    }
+      "Resource": ["arn:aws:s3:::altia16",
+                   "arn:aws:s3:::altia16/*"]
+    },
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": ["arn:aws:iam::079454390799:user/altia2"]
+      },
+      "Action": ["s3:ListBucket"],
+      "Resource": ["arn:aws:s3:::altia16"]
+    },
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": ["arn:aws:iam::079454390799:group/developer"]
+      },
+      "Action": ["s3:ListBucket"],
+      "Resource": ["arn:aws:s3:::altia16"]
+    },   
   ]
 }
